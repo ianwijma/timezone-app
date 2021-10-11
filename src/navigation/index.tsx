@@ -11,13 +11,9 @@ import * as React from 'react';
 
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import {
-  RootStackParamList,
-  RootTabParamList,
-  RootTabScreenProps,
-} from '../../types';
+import TimeScreen from '../screens/TimeScreen';
+import SettingScreen from '../screens/SettingScreen';
+import { RootStackParamList, RootTabParamList } from '../../types';
 import LinkingConfiguration from './LinkingConfiguration';
 
 export default function Navigation() {
@@ -65,7 +61,7 @@ function BottomTabNavigator() {
     <BottomTab.Navigator initialRouteName="TabOne">
       <BottomTab.Screen
         name="TabOne"
-        component={TabOneScreen}
+        component={TimeScreen}
         options={{
           title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="clock" color={color} />,
@@ -74,7 +70,7 @@ function BottomTabNavigator() {
       />
       <BottomTab.Screen
         name="TabTwo"
-        component={TabTwoScreen}
+        component={SettingScreen}
         options={{
           title: '',
           tabBarIcon: ({ color }) => <TabBarIcon name="cog" color={color} />,
