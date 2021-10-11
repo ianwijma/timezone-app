@@ -1,7 +1,8 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { Text, View } from 'react-native';
+import { Platform, Text, View } from 'react-native';
 import { TimeZoneName } from '../libs/timezone';
 import tw from '../libs/tw';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 export default function TimeSelector({
   time,
@@ -12,9 +13,14 @@ export default function TimeSelector({
   zone: TimeZoneName;
   setTime: Dispatch<SetStateAction<number>>;
 }) {
+  const onChange = (event: any, selectedDate: Date) => {
+    const currentDate = selectedDate || new Date(time);
+    setTime(currentDate.getTime());
+  };
+
   return (
     <View style={tw('h-20')}>
-      <Text style={tw('text-red-400')}>Hey you!</Text>
+      {/* <DateTimePicker value={new Date(time)} mode={'time'} display="inline" /> */}
     </View>
   );
 }

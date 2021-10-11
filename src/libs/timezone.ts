@@ -1,6 +1,8 @@
 import { DateTime } from 'luxon';
 import { zones } from 'tzdata';
 
+// TODO: Change Luxon for other tool or even native Date.
+
 export type TimeZoneName = string;
 
 export function changeTimeZone(
